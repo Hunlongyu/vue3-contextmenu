@@ -1,12 +1,31 @@
 <template>
-  <div class="menuItem">
+  <div class="menuItem" :class="itemClass" @click="handleClick">
     <slot />
   </div>
 </template>
 <script>
-export default {
-  name: 'ContextMenuItem'
-}
+import { reactive, computed, defineComponent } from "vue"
+import bus from './mitt'
+export default defineComponent({
+  name: 'ContextMenuItem',
+  props: {
+    disabled: Boolean,
+    style: Object
+  },
+  setup (props) {
+    function handleClick () {
+      bus.emit('item-click')
+      console.log('props.style: ', props.style)
+    }
+
+    const itemClass = reactive({
+      'menuItem-disabled': computed(() => props.disabled)
+    })
+
+
+    return { itemClass, handleClick }
+  }
+})
 </script>
 <style scoped>
 .menuItem{
@@ -18,5 +37,13 @@ export default {
 .menuItem:hover{
   color: #409eff;
   background-color: #f2f8fe;
+}
+.menuItem-disabled{
+  color: #c0c4cc;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+.menuItem-disabled:hover{
+  color: #c0c4cc;
 }
 </style>

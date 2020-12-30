@@ -1,16 +1,17 @@
 <template>
   <contextmenu>
-    <context-menu-item>复制</context-menu-item>
+    <context-menu-item :style="itemStyle" @click="copyEvent('copy')">复制</context-menu-item>
     <context-menu-item>粘贴</context-menu-item>
     <context-menu-item>剪切</context-menu-item>
     <context-menu-submenu>
-      <context-menu-item>新建文件</context-menu-item>
+      <context-menu-item :disabled="true">新建文件</context-menu-item>
       <context-menu-item>新建文件夹</context-menu-item>
     </context-menu-submenu>
   </contextmenu>
 </template>
 
 <script>
+import { ref } from 'vue'
 import contextmenu from './components/ContextMenu.vue'
 import contextMenuItem from './components/ContextMenuItem.vue'
 import contextMenuSubmenu from './components/ContextMenuSubmenu.vue'
@@ -21,6 +22,15 @@ export default {
     contextmenu,
     contextMenuItem,
     contextMenuSubmenu
+  },
+  setup () {
+    const itemStyle = ref({})
+
+    function copyEvent (e) {
+      console.log('copyEvent: ', e)
+    }
+
+    return { itemStyle, copyEvent }
   }
 }
 </script>
