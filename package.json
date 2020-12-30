@@ -2,6 +2,17 @@
   "name": "vue3-contextmenu",
   "version": "0.1.0",
   "private": true,
+  "description": "vue3 contextmenu",
+  "keywords": [
+    "vue3",
+    "contextmenu"
+  ],
+  "author": {
+    "name": "hunlongyu",
+    "email": "hunlongyu@gmail.com",
+    "url": "https://github.com/Hunlongyu"
+  },
+  "license": "MIT",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",

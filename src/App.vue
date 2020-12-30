@@ -1,15 +1,26 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <contextmenu>
+    <context-menu-item>复制</context-menu-item>
+    <context-menu-item>粘贴</context-menu-item>
+    <context-menu-item>剪切</context-menu-item>
+    <context-menu-submenu>
+      <context-menu-item>新建文件</context-menu-item>
+      <context-menu-item>新建文件夹</context-menu-item>
+    </context-menu-submenu>
+  </contextmenu>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import contextmenu from './components/ContextMenu.vue'
+import contextMenuItem from './components/ContextMenuItem.vue'
+import contextMenuSubmenu from './components/ContextMenuSubmenu.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    contextmenu,
+    contextMenuItem,
+    contextMenuSubmenu
   }
 }
 </script>
@@ -19,8 +30,6 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
