@@ -1,4 +1,5 @@
 <template>
+  <!-- <div class="demo" v-contextmenu>右键点击区域</div> -->
   <contextmenu>
     <context-menu-item :style="itemStyle" @click="copyEvent('copy')">复制</context-menu-item>
     <context-menu-item>粘贴</context-menu-item>
@@ -10,13 +11,13 @@
   </contextmenu>
 </template>
 
-<script>
-import { ref } from 'vue'
+<script lang="ts">
+import { defineComponent, ref } from 'vue'
 import contextmenu from './components/ContextMenu.vue'
 import contextMenuItem from './components/ContextMenuItem.vue'
 import contextMenuSubmenu from './components/ContextMenuSubmenu.vue'
 
-export default {
+export default defineComponent({
   name: 'App',
   components: {
     contextmenu,
@@ -26,13 +27,13 @@ export default {
   setup () {
     const itemStyle = ref({})
 
-    function copyEvent (e) {
+    function copyEvent (e: any) {
       console.log('copyEvent: ', e)
     }
 
     return { itemStyle, copyEvent }
   }
-}
+})
 </script>
 
 <style>
@@ -40,6 +41,16 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-align: center;
   color: #2c3e50;
+  margin-top: 60px;
+}
+.demo{
+  width: 200px;
+  height: 100px;
+  background-color: #dadada;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 </style>

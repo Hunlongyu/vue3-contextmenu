@@ -3,15 +3,15 @@
     <slot />
   </div>
 </template>
-<script>
+<script lang="ts">
 import { onMounted, ref } from 'vue'
-import bus from './mitt'
+import bus from './bus'
 export default {
   name: 'ContextMenu',
   setup () {
     const show = ref(false)
     let refs = ''
-    const dom = ele => {
+    const dom = (ele: any) => {
       refs = ele
     }
 
@@ -21,7 +21,7 @@ export default {
     //   }
     // }
 
-    function handleContextMenu (e) {
+    function handleContextMenu (e: any) {
       e.preventDefault()
       show.value = true
       console.log('右键点击了')
@@ -30,7 +30,7 @@ export default {
     // 注册右键点击事件
     function registerHandle () {
       document.addEventListener('contextmenu', handleContextMenu)
-    } 
+    }
 
     onMounted(() => {
       registerHandle()

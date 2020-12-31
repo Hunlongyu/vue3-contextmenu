@@ -3,9 +3,9 @@
     <slot />
   </div>
 </template>
-<script>
-import { reactive, computed, defineComponent } from "vue"
-import bus from './mitt'
+<script lang="ts">
+import { reactive, computed, defineComponent } from 'vue'
+import bus from './bus'
 export default defineComponent({
   name: 'ContextMenuItem',
   props: {
@@ -21,7 +21,6 @@ export default defineComponent({
     const itemClass = reactive({
       'menuItem-disabled': computed(() => props.disabled)
     })
-
 
     return { itemClass, handleClick }
   }
