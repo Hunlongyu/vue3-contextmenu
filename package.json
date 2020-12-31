@@ -1,7 +1,7 @@
 {
   "name": "vue3-contextmenu",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "description": "vue3 contextmenu",
   "keywords": [
     "vue3",
@@ -14,6 +14,9 @@
   },
   "license": "MIT",
   "main": "./dist/vue3-contextmenu.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
