@@ -27,7 +27,7 @@ export default defineComponent({
   setup () {
     const itemStyle = ref({})
 
-    function copyEvent (e: any) {
+    function copyEvent (e: string) {
       console.log('copyEvent: ', e)
     }
 

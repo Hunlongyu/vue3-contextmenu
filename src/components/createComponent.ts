@@ -4,6 +4,7 @@ export function createComponent (options: IContextmenuOptions): IContextmenuInst
   // const data = reactive({
   //   ...options
   // })
+  console.log(options, 'options')
 
   function show () {
     console.log('右键点击了')
@@ -14,5 +15,5 @@ export function createComponent (options: IContextmenuOptions): IContextmenuInst
   //   show
   // }
 
-  return show
+  return { show }
 }

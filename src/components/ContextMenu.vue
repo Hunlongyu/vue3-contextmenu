@@ -1,5 +1,5 @@
 <template>
-  <div class="contextmenu" v-if="show" :ref="dom">
+  <div class="contextmenu" v-if="show" ref="dom">
     <slot />
   </div>
 </template>
@@ -10,10 +10,7 @@ export default {
   name: 'ContextMenu',
   setup () {
     const show = ref(false)
-    let refs = ''
-    const dom = (ele: any) => {
-      refs = ele
-    }
+    const dom = ref(null)
 
     // function showMenu () {
     //   if (!refs || refs === '') {
@@ -39,7 +36,7 @@ export default {
       })
     })
 
-    return { show, dom, refs }
+    return { show, dom }
   }
 }
 </script>
