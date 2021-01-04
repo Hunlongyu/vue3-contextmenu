@@ -5,7 +5,7 @@
 </template>
 <script lang="ts">
 import { onMounted, ref } from 'vue'
-import bus from './bus'
+// import bus from './bus'
 export default {
   name: 'ContextMenu',
   setup () {
@@ -18,23 +18,23 @@ export default {
     //   }
     // }
 
-    function handleContextMenu (e: any) {
-      e.preventDefault()
-      show.value = true
-      // console.log('右键点击了')
-    }
+    // function handleContextMenu (e: any) {
+    //   e.preventDefault()
+    //   show.value = true
+    //   // console.log('右键点击了')
+    // }
 
-    // 注册右键点击事件
-    function registerHandle () {
-      document.addEventListener('contextmenu', handleContextMenu)
-    }
+    // // 注册右键点击事件
+    // function registerHandle () {
+    //   document.addEventListener('contextmenu', handleContextMenu)
+    // }
 
-    onMounted(() => {
-      registerHandle()
-      bus.on('item-click', () => {
-        show.value = false
-      })
-    })
+    // onMounted(() => {
+    //   registerHandle()
+    //   bus.on('item-click', () => {
+    //     show.value = false
+    //   })
+    // })
 
     return { show, dom }
   }

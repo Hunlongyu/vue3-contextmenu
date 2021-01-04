@@ -1,34 +1,14 @@
-import { App, VNode } from 'vue'
-import ContextMenu from './components/ContextMenu.vue'
-import ContextMenuItem from './components/ContextMenuItem.vue'
-import ContextMenuSubmenu from './components/ContextMenuSubmenu.vue'
+// import { createComponent } from './createComponent'
+// import type { IContextmenuOptions, IContextmenuInstance } from './type'
 
-const Plugin = (app: App) => {
-  app.component(ContextMenu.name, ContextMenu)
-  app.component(ContextMenuItem.name, ContextMenuItem)
-  app.component(ContextMenuSubmenu.name, ContextMenuSubmenu)
-}
+// const ContextMenu = function (options: IContextmenuOptions = {}): IContextmenuInstance {
+//   const instance = createComponent({
+//     ...options
+//   })
+//   return instance
+// }
 
-const Directive = (app: App) => {
-  app.directive('contextmenu', (el, binding, vnode: VNode) => {
-    const instance = vnode.dirs[0].instance
-    instance.contextmenu.registerHandlers({ el, vnode })
-  })
-}
+// export default ContextMenu
 
-const contextmenu = {
-  install (app: App) {
-    Plugin(app, this)
-  }
-}
-
-const directive = {
-  install (app: App) {
-    Directive(app, this)
-  }
-}
-
-export {
-  contextmenu,
-  directive
-}
+import { App } from 'vue'
+import type {  } from './type'

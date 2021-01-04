@@ -1,4 +1,4 @@
-import ContextMenu from './test'
+import ContextMenu from './index'
 
 const VContextmenu = {
   mounted (el: any, binding: any) {
