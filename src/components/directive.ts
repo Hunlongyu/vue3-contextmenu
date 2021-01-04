@@ -1,6 +1,6 @@
-import { VNode } from 'vue'
+import { VNode, VNodeDirective } from 'vue'
 const VContextmenu = {
-  mounted (el: any, binding: any, vnode: VNode) {
+  mounted (el: HTMLElement, binding: VNodeDirective, vnode: VNode) {
     console.log(el, binding)
     const vm = binding.instance
     console.log(vm, 'vm')

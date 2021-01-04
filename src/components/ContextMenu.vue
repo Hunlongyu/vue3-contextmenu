@@ -1,5 +1,5 @@
 <template>
-  <div class="contextmenu" v-if="show" ref="dom">
+  <div class="contextmenu" v-show="show" ref="dom">
     <slot />
   </div>
 </template>
@@ -18,10 +18,35 @@ export default {
     //   }
     // }
 
-    function handleContextMenu (e: any) {
+    // function getPosition (x: number, y: number) {
+    //   const { value: el } = dom
+    //   const style = { top: y, left: x }
+    //   const { innerWidth, innerHeight } = window
+    //   const { clientWidth: elWidth, clientHeight: elHeight } = el
+    //   if (y + elHeight > innerHeight) {
+    //     style.top -= elHeight
+    //   }
+    //   if (x + elWidth > innerWidth) {
+    //     style.left -= elWidth
+    //   }
+    //   if (style.top < 0) {
+    //     style.top = elHeight < innerHeight ? (innerHeight - elHeight) / 2 : 0
+    //   }
+    //   if (style.left < 0) {
+    //     style.left = elWidth < innerWidth ? (innerWidth - elWidth) / 2 : 0
+    //   }
+    //   return style
+    // }
+
+    function handleContextMenu (e: Event) {
       e.preventDefault()
+      // const { value: el } = dom
+      // const { pageX: x, pageY: y } = e
       show.value = true
-      // console.log('右键点击了')
+      // await nextTick()
+      // const { left, top } = getPosition(x, y)
+      // el.style.top = `${top + 5}px`
+      // el.style.left = `${left + 5}px`
     }
 
     // // 注册右键点击事件
@@ -36,7 +61,7 @@ export default {
       })
     })
 
-    return { show, dom }
+    return { show }
   }
 }
 </script>
