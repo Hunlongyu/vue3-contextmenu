@@ -1,5 +1,5 @@
 <template>
-  <!-- <div class="demo" v-contextmenu>右键点击区域</div> -->
+  <div class="demo" v-contextmenu>右键点击区域</div>
   <contextmenu>
     <context-menu-item :style="itemStyle" @click="copyEvent('copy')">复制</context-menu-item>
     <context-menu-item>粘贴</context-menu-item>

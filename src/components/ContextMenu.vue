@@ -24,7 +24,7 @@ export default {
     function handleContextMenu (e: any) {
       e.preventDefault()
       show.value = true
-      console.log('右键点击了')
+      // console.log('右键点击了')
     }
 
     // 注册右键点击事件
