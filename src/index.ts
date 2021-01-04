@@ -1,9 +1,24 @@
 import { App } from 'vue'
-import VContextmenu from './components/directive'
+// import directive from './components/directive'
+
+import Contextmenu from './components/ContextMenu.vue'
+import ContextmenuItem from './components/ContextMenuItem.vue'
+import ContextmenuSubmenu from './components/ContextMenuSubmenu.vue'
+
+const install = (app: App): void => {
+  // app.directive('contextmenu', directive)
+  app.component(Contextmenu.name, Contextmenu)
+  app.component(Contextmenu.name, Contextmenu)
+  app.component(Contextmenu.name, Contextmenu)
+}
+
+export {
+  // directive,
+  Contextmenu,
+  ContextmenuItem,
+  ContextmenuSubmenu
+}
 
 export default {
-  install: (app: App) => {
-    app.directive('contextmenu', VContextmenu)
-  },
-  directive: VContextmenu
+  install
 }

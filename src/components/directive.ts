@@ -1,14 +1,13 @@
-import ContextMenu from './index'
-
+import { VNode } from 'vue'
 const VContextmenu = {
-  mounted (el: any, binding: any) {
+  mounted (el: any, binding: any, vnode: VNode) {
     console.log(el, binding)
     const vm = binding.instance
     console.log(vm, 'vm')
-    const instance = ContextMenu({
-      visible: !!binding.value
-    })
-    el.instance = instance
+    // const instance = ContextMenu({
+    //   visible: !!binding.value
+    // })
+    // el.instance = instance
   },
   unmounted () {
     console.log('unmounted')
