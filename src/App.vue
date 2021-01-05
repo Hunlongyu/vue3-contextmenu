@@ -6,7 +6,7 @@
     <context-menu-item :style="itemStyle" @click="copyEvent">复制</context-menu-item>
     <context-menu-item>粘贴</context-menu-item>
     <context-menu-item>剪切</context-menu-item>
-    <context-menu-submenu>
+    <context-menu-submenu :label="'新建'">
       <context-menu-item :disabled="true">新建文件</context-menu-item>
       <context-menu-item>新建文件夹</context-menu-item>
     </context-menu-submenu>
