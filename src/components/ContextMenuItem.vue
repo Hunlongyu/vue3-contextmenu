@@ -1,9 +1,9 @@
 <template>
   <div>
-    <div class="menuItem" :class="itemClass" @click="handleClick" >
+    <div class="v-contextmenu-item" :class="itemClass" @click="handleClick" >
       <slot />
     </div>
-    <div class="menuItem-divider" v-if="divider"></div>
+    <div class="v-contextmenu-divider" v-if="divider"></div>
   </div>
 </template>
 <script lang="ts">
@@ -24,7 +24,7 @@ export default defineComponent({
     }
 
     const itemClass = reactive({
-      'menuItem-disabled': computed(() => props.disabled)
+      'v-contextmenu-item--disabled': computed(() => props.disabled)
     })
 
     return { itemClass, handleClick }
@@ -32,26 +32,23 @@ export default defineComponent({
 })
 </script>
 <style scoped>
-.menuItem{
+.v-contextmenu-item{
   cursor: pointer;
   background-color: #fff;
   padding: 10px 20px;
   font-size: 14px;
   white-space: nowrap;
 }
-.menuItem:hover{
+.v-contextmenu-item:hover{
   color: #409eff;
   background-color: #f2f8fe;
 }
-.menuItem-disabled{
+.v-contextmenu-item--disabled{
   color: #c0c4cc;
   cursor: not-allowed;
   pointer-events: none;
 }
-.menuItem-disabled:hover{
-  color: #c0c4cc;
-}
-.menuItem-divider{
+.v-contextmenu-divider{
   border-bottom: 1px solid #ebebeb;
   box-sizing: border-box;
   height: 1px;

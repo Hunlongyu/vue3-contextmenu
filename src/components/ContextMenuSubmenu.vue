@@ -1,15 +1,15 @@
 <template>
   <div>
-    <div class="submenu" :class="hover ? ' submenu-hover' : ''" @mouseenter="mouseEnterEvent" @mouseleave="mouseLeaveEvent">
-      <div class="sub-label">
+    <div class="v-contextmenu-submenu" :class="hover ? ' v-contextmenu-submenu--hover' : ''" @mouseenter="mouseEnterEvent" @mouseleave="mouseLeaveEvent">
+      <div class="v-contextmenu-submenu-label">
         <span><slot name="label">{{label}}</slot></span>
-        <span class="submenu-right"></span>
+        <span class="v-contextmenu-submenu-right"></span>
       </div>
-      <div class="children-menu" v-show="hover">
+      <div class="v-contextmenu-submenu-children" v-show="hover">
         <slot />
       </div>
     </div>
-    <div class="menuItem-divider" v-if="divider"></div>
+    <div class="v-contextmenu-divider" v-if="divider"></div>
   </div>
 </template>
 <script lang="ts">
@@ -39,14 +39,14 @@ export default defineComponent({
 })
 </script>
 <style scoped>
-.submenu{
+.v-contextmenu-submenu{
   position: relative;
 }
-.submenu-hover > .sub-label{
+.v-contextmenu-submenu-hover > .v-contextmenu-submenu-label{
   color: #409eff;
   background-color: #f2f8fe;
 }
-.sub-label{
+.v-contextmenu-submenu-label{
   cursor: pointer;
   padding: 10px 20px;
   font-size: 14px;
@@ -54,13 +54,13 @@ export default defineComponent({
   justify-content: space-between;
   white-space: nowrap;
 }
-.children-menu{
+.v-contextmenu-submenu-children{
   position: absolute;
   left: 100%;
   top: 0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
 }
- .submenu-right {
+ .v-contextmenu-submenu-right {
  box-sizing: border-box;
  position: relative;
  display: block;
@@ -72,7 +72,7 @@ export default defineComponent({
  margin-right: -8px;
 }
 
-.submenu-right::after {
+.v-contextmenu-submenu-right::after {
  content: "";
  display: block;
  box-sizing: border-box;
@@ -86,7 +86,7 @@ export default defineComponent({
  top: 4px;
  opacity: 0.6;
 }
-.menuItem-divider{
+.v-contextmenu-divider{
   border-bottom: 1px solid #ebebeb;
   box-sizing: border-box;
   height: 1px;

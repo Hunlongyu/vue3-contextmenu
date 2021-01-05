@@ -1,8 +1,8 @@
-# vue3-contextmenu （开发中... 进度：90%）
+# vue3-contextmenu
 
 由 Vue3 和 Typescript 编写的 Contextmenu 右键菜单组件。
 
-[官网 & 文档 & 示例](http://baidu.com)
+<!-- [官网 & 文档 & 示例](http://baidu.com) -->
 
 ### 截图
 
@@ -73,7 +73,7 @@ app.vue
 
 * `v-contextmenu`: 根元素
 * `v-contextmenu-item`: 单个菜单
-* `v-contextmenu-item--hover`: 单个菜单鼠标悬浮激活状态
+* `v-contextmenu-item:hover`: 单个菜单鼠标悬浮激活状态
 * `v-contextmenu-item--disabled`: 单个菜单禁用状态
 * `v-contextmenu-divider`: 分割线
 * `v-contextmenu-submenu-label`: 子菜单标题

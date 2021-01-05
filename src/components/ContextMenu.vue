@@ -1,6 +1,6 @@
 <template>
   <teleport to="body">
-    <div class="contextmenu" v-show="show" ref="contextmenu">
+    <div class="v-contextmenu" v-show="show" ref="contextmenu">
       <slot />
     </div>
   </teleport>
@@ -68,7 +68,7 @@ export default defineComponent({
 })
 </script>
 <style scoped>
-.contextmenu{
+.v-contextmenu{
   position: fixed;
   top: 0;
   left: 0;
