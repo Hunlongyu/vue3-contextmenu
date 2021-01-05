@@ -2,7 +2,7 @@
 <div class="">
   <div class="demo" v-contextmenu v-if="show">右键点击区域</div>
   <button @click="show = !show">show</button>
-  <contextmenu ref="contextmenu">
+  <context-menu>
     <context-menu-item :style="itemStyle" @click="copyEvent">复制</context-menu-item>
     <context-menu-item>粘贴</context-menu-item>
     <context-menu-item>剪切</context-menu-item>
@@ -10,15 +10,12 @@
       <context-menu-item :disabled="true">新建文件</context-menu-item>
       <context-menu-item>新建文件夹</context-menu-item>
     </context-menu-submenu>
-  </contextmenu>
+  </context-menu>
 </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
-import contextmenu from './components/ContextMenu.vue'
-import contextMenuItem from './components/ContextMenuItem.vue'
-import contextMenuSubmenu from './components/ContextMenuSubmenu.vue'
 
 export default defineComponent({
   name: 'App',
@@ -27,20 +24,14 @@ export default defineComponent({
       show: true
     }
   },
-  components: {
-    contextmenu,
-    contextMenuItem,
-    contextMenuSubmenu
-  },
   setup () {
     const itemStyle = ref({})
-    const contextmenu = ref(null)
 
     function copyEvent (e: MouseEvent) {
       console.log('copyEvent: ', e)
     }
 
-    return { itemStyle, copyEvent, contextmenu }
+    return { itemStyle, copyEvent }
   }
 })
 </script>

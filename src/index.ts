@@ -8,8 +8,8 @@ import ContextmenuSubmenu from './components/ContextMenuSubmenu.vue'
 const install = (app: App): void => {
   app.directive('contextmenu', directive)
   app.component(Contextmenu.name, Contextmenu)
-  app.component(Contextmenu.name, Contextmenu)
-  app.component(Contextmenu.name, Contextmenu)
+  app.component(ContextmenuItem.name, ContextmenuItem)
+  app.component(ContextmenuSubmenu.name, ContextmenuSubmenu)
 }
 
 export {
@@ -22,3 +22,12 @@ export {
 export default {
   install
 }
+// export default {
+//   install (app: App) {
+//     app.directive('contextmenu', directive)
+//     app.component(Contextmenu.name, Contextmenu)
+//     app.component(ContextmenuItem.name, ContextmenuItem)
+//     app.component(ContextmenuSubmenu.name, ContextmenuSubmenu)
+//   },
+//   directive: directive
+// }
