@@ -1,17 +1,18 @@
-import { VNode } from 'vue'
-const VContextmenu = {
-  mounted (el: HTMLElement, binding: any, vnode: VNode) {
-    console.log(el, binding)
-    const vm = binding.instance
-    console.log(vm, 'vm')
-    // const instance = ContextMenu({
-    //   visible: !!binding.value
-    // })
-    // el.instance = instance
-  },
-  unmounted () {
-    console.log('unmounted')
-  }
+import bus from './bus'
+const onMounted = (el: HTMLElement) => {
+  el.addEventListener('contextmenu', (e) => {
+    e.preventDefault()
+    bus.emit('add-contextmenu', e)
+  }, true)
 }
 
-export default VContextmenu
+const unmounted = (el: HTMLElement) => {
+  el.removeEventListener('contextmenu', () => {
+    bus.emit('remove-contextmenu')
+  }, true)
+}
+
+export default {
+  mounted: onMounted,
+  unmounted: unmounted
+}

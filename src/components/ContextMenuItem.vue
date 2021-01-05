@@ -15,7 +15,6 @@ export default defineComponent({
   setup (props) {
     function handleClick () {
       bus.emit('item-click')
-      console.log('props.style: ', props.style)
     }
 
     const itemClass = reactive({
