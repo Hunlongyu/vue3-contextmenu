@@ -2,7 +2,7 @@
 
 由 Vue3 和 Typescript 编写的 Contextmenu 右键菜单组件。
 
-<!-- [官网 & 文档 & 示例](http://baidu.com) -->
+[官网 & 文档 & 示例](https://hunlongyu.github.io/vue3-contextmenu/)
 
 ### 截图
 ![vue3-contextmenu.png](https://i.loli.net/2021/01/06/n8JgY9MW5bqeax2.png)
