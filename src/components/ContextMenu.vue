@@ -1,7 +1,9 @@
 <template>
-  <div class="contextmenu" v-show="show" ref="contextmenu">
-    <slot />
-  </div>
+  <teleport to="body">
+    <div class="contextmenu" v-show="show" ref="contextmenu">
+      <slot />
+    </div>
+  </teleport>
 </template>
 <script lang="ts">
 import { defineComponent, ref, onMounted, nextTick } from 'vue'

@@ -12,10 +12,8 @@ const onMounted = (el: HTMLElement) => {
   })
 }
 
-const unmounted = (el: HTMLElement) => {
-  el.removeEventListener('contextmenu', () => {
-    bus.emit('hide-contextmenu')
-  }, true)
+const unmounted = () => {
+  bus.emit('hide-contextmenu')
 }
 
 export default {
