@@ -22,12 +22,3 @@ export {
 export default {
   install
 }
-// export default {
-//   install (app: App) {
-//     app.directive('contextmenu', directive)
-//     app.component(Contextmenu.name, Contextmenu)
-//     app.component(ContextmenuItem.name, ContextmenuItem)
-//     app.component(ContextmenuSubmenu.name, ContextmenuSubmenu)
-//   },
-//   directive: directive
-// }
