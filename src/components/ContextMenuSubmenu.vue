@@ -42,7 +42,7 @@ export default defineComponent({
 .v-contextmenu-submenu{
   position: relative;
 }
-.v-contextmenu-submenu-hover > .v-contextmenu-submenu-label{
+.v-contextmenu-submenu--hover > .v-contextmenu-submenu-label{
   color: #409eff;
   background-color: #f2f8fe;
 }

@@ -5,7 +5,7 @@
 <!-- [官网 & 文档 & 示例](http://baidu.com) -->
 
 ### 截图
-
+![vue3-contextmenu](./src/assets/vue3-contextmenu.png)
 
 ### 安装
 ```bash
