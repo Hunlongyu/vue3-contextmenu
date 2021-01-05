@@ -1,6 +1,9 @@
 <template>
-  <div class="menuItem" :class="itemClass" @click="handleClick">
-    <slot />
+  <div>
+    <div class="menuItem" :class="itemClass" @click="handleClick" >
+      <slot />
+    </div>
+    <div class="menuItem-divider" v-if="divider"></div>
   </div>
 </template>
 <script lang="ts">
@@ -10,7 +13,10 @@ export default defineComponent({
   name: 'ContextMenuItem',
   props: {
     disabled: Boolean,
-    style: Object
+    divider: {
+      type: Boolean,
+      default: false
+    }
   },
   setup (props) {
     function handleClick () {
@@ -31,6 +37,7 @@ export default defineComponent({
   background-color: #fff;
   padding: 10px 20px;
   font-size: 14px;
+  white-space: nowrap;
 }
 .menuItem:hover{
   color: #409eff;
@@ -43,5 +50,10 @@ export default defineComponent({
 }
 .menuItem-disabled:hover{
   color: #c0c4cc;
+}
+.menuItem-divider{
+  border-bottom: 1px solid #ebebeb;
+  box-sizing: border-box;
+  height: 1px;
 }
 </style>
