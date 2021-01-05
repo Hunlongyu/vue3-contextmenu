@@ -12,10 +12,6 @@ export default defineComponent({
     const show = ref(false)
     const contextmenu = ref(null)
 
-    function initMenu (e: HTMLElement) {
-      console.log(e)
-    }
-
     function getPosition (x: number, y: number) {
       const style = { top: y, left: x }
       const { innerWidth, innerHeight } = window
@@ -51,10 +47,6 @@ export default defineComponent({
     }
 
     onMounted(() => {
-      bus.on('init-contextmenu', e => {
-        console.log('lala')
-        initMenu(e)
-      })
       bus.on('add-contextmenu', e => {
         showMenu(e)
       })
