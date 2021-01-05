@@ -1,5 +1,6 @@
 <template>
 <div class="">
+  <h1>Vue3-contextmenu 右键菜单</h1>
   <div class="demo" v-contextmenu>右键点击区域</div>
   <context-menu>
     <context-menu-submenu :label="'查看'">
@@ -14,7 +15,7 @@
       <context-menu-item>大小</context-menu-item>
       <context-menu-item :disabled="true">时长</context-menu-item>
     </context-menu-submenu>
-    <context-menu-item :divider="true">刷新</context-menu-item>
+    <context-menu-item @click="refresh" :divider="true">刷新</context-menu-item>
     <context-menu-submenu :label="'自定义'" divider>
       <context-menu-item>二级菜单</context-menu-item>
       <context-menu-submenu :label="'多级菜单'">
@@ -33,17 +34,14 @@
 </template>
 
 <script lang="ts">
-import { ref } from 'vue'
 export default {
   name: 'App',
   setup () {
-    const itemStyle = ref({})
-
-    function copyEvent (e: MouseEvent) {
-      console.log('copyEvent: ', e)
+    function refresh () {
+      alert('刷新')
     }
 
-    return { itemStyle, copyEvent }
+    return { refresh }
   }
 }
 </script>
@@ -58,10 +56,11 @@ export default {
   margin-top: 60px;
 }
 .demo{
-  width: 200px;
-  height: 100px;
-  background-color: #dadada;
+  width: 400px;
+  height: 200px;
+  background-color: #ddd;
   display: flex;
+  margin: 100px auto;
   justify-content: center;
   align-items: center;
 }

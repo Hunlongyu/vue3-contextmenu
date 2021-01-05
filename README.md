@@ -5,7 +5,7 @@
 <!-- [官网 & 文档 & 示例](http://baidu.com) -->
 
 ### 截图
-![vue3-contextmenu](./src/assets/vue3-contextmenu.png)
+![vue3-contextmenu.png](https://i.loli.net/2021/01/06/n8JgY9MW5bqeax2.png)
 
 ### 安装
 ```bash
@@ -40,7 +40,7 @@ app.vue
       <context-menu-item>大小</context-menu-item>
       <context-menu-item disabled>时长</context-menu-item>
     </context-menu-submenu>
-    <context-menu-item :divider="true">刷新</context-menu-item>
+    <context-menu-item @click="refresh" :divider="true">刷新</context-menu-item>
     <context-menu-submenu :label="'自定义'" divider>
       <context-menu-item>二级菜单</context-menu-item>
       <context-menu-submenu :label="'多级菜单'">
@@ -58,6 +58,19 @@ app.vue
 
   <div v-contextmenu>右键点击区域</div>
 </template>
+
+<script lang="ts">
+export default {
+  name: 'App',
+  setup () {
+    function refresh () {
+      alert('刷新')
+    }
+
+    return { refresh }
+  }
+}
+</script>
 ```
 
 ### 说明
