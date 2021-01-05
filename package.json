@@ -13,7 +13,7 @@
     "url": "https://github.com/Hunlongyu"
   },
   "license": "MIT",
-  "main": "./dist/vue3-contextmenu.js",
+  "main": "./dist/vue3-contextmenu.common.js",
   "files": [
     "dist"
   ],
@@ -21,7 +21,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "package": "vue-cli-service build --target lib --vue3-contextmenu main ./src/components/index.js"
+    "package": "vue-cli-service build --target lib --vue3-contextmenu main ./src/index.ts"
   },
   "dependencies": {
     "core-js": "^3.6.5",
