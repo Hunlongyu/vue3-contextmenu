@@ -15,36 +15,42 @@ export default defineComponent({
   },
   setup () {
     const show = ref(false)
-    const contextmenu = ref(null)
+    const contextmenu = ref<HTMLDivElement>()
 
     function getPosition (x: number, y: number) {
       const style = { top: y, left: x }
       const { innerWidth, innerHeight } = window
-      const el: any = contextmenu.value
-      const { clientWidth: elWidth, clientHeight: elHeight } = el
-      if (y + elHeight > innerHeight) {
-        style.top -= elHeight
+      if (contextmenu.value) {
+        const el: HTMLDivElement = contextmenu.value
+        const { clientWidth: elWidth, clientHeight: elHeight } = el
+        if (y + elHeight > innerHeight) {
+          style.top -= elHeight
+        }
+        if (x + elWidth > innerWidth) {
+          style.left -= elWidth
+        }
+        if (style.top < 0) {
+          style.top = elHeight < innerHeight ? (innerHeight - elHeight) / 2 : 0
+        }
+        if (style.left < 0) {
+          style.left = elWidth < innerWidth ? (innerWidth - elWidth) / 2 : 0
+        }
+        return style
       }
-      if (x + elWidth > innerWidth) {
-        style.left -= elWidth
-      }
-      if (style.top < 0) {
-        style.top = elHeight < innerHeight ? (innerHeight - elHeight) / 2 : 0
-      }
-      if (style.left < 0) {
-        style.left = elWidth < innerWidth ? (innerWidth - elWidth) / 2 : 0
-      }
-      return style
     }
 
     async function showMenu (e: MouseEvent) {
       show.value = true
       const { pageX: x, pageY: y } = e
       await nextTick()
-      const el: any = contextmenu.value
-      const { left, top } = getPosition(x, y)
-      el.style.top = `${top + 5}px`
-      el.style.left = `${left + 5}px`
+      if (contextmenu.value) {
+        const el: HTMLDivElement = contextmenu.value
+        const p = getPosition(x, y)
+        if (p) {
+          el.style.top = `${p.top + 5}px`
+          el.style.left = `${p.left + 5}px`
+        }
+      }
     }
 
     function hideMenu () {
