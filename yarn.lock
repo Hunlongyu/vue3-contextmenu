@@ -8840,15 +8840,15 @@ vue-template-es2015-compiler@^1.9.0:
   resolved "https://registry.npm.taobao.org/vue-template-es2015-compiler/download/vue-template-es2015-compiler-1.9.1.tgz#1ee3bc9a16ecbf5118be334bb15f9c46f82f5825"
   integrity sha1-HuO8mhbsv1EYvjNLsV+cRvgvWCU=
 
-vue3-contextmenu@^0.1.10, vue3-contextmenu@^0.1.9:
-  version "0.1.10"
-  resolved "https://registry.npmjs.org/vue3-contextmenu/-/vue3-contextmenu-0.1.10.tgz#20be0d8a7d536fd04246536ed48b3398bab599be"
-  integrity sha512-4Ojr9ocAlm5SRH1haxXnj6C/ybFLYhw1ttRRyKXvBfwsSfT5SawW42wfk09abOXI5qFVuYs+pcBx2xvWqexi4A==
+vue3-contextmenu@^0.1.10, vue3-contextmenu@^0.1.11:
+  version "0.1.11"
+  resolved "https://registry.npmjs.org/vue3-contextmenu/-/vue3-contextmenu-0.1.11.tgz#41d293ddf3bb2620876ae685a7c3ce5153d902c7"
+  integrity sha512-0/q9N7mGXPXDm1kgpXc1rFUpSA8ILJdeVBExeq8lesIMckgajEXkm5f1Bn37Y+LxlpfW/+AhLvLjBMM04tCOWg==
   dependencies:
     core-js "^3.6.5"
     mitt "^2.1.0"
     vue "^3.0.0"
-    vue3-contextmenu "^0.1.9"
+    vue3-contextmenu "^0.1.10"
 
 vue@^3.0.0:
   version "3.0.5"

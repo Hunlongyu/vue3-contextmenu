@@ -21,6 +21,7 @@ $ yarn add vue3-contextmenu
 mian.ts
 ```js
 import contextmenu from 'vue3-contextmenu'
+import 'vue3-contextmenu/dist/vue3-contextmenu.css'
 app.use(contextmenu)
 ```
 
