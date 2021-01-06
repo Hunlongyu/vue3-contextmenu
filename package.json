@@ -1,6 +1,6 @@
 {
   "name": "vue3-contextmenu",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "private": false,
   "description": "vue3 contextmenu",
   "keywords": [
@@ -25,12 +25,13 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "build:lib": "vue-cli-service build --target lib --vue3-contextmenu main ./src/index.ts",
-    "build:dts": "tsc src/index.ts --declaration --declarationDir types --emitDeclarationOnly"
+    "build:dts": "tsc src/index.ts --declaration --declarationDir ./dist/types --emitDeclarationOnly"
   },
   "dependencies": {
     "core-js": "^3.6.5",
     "mitt": "^2.1.0",
-    "vue": "^3.0.0"
+    "vue": "^3.0.0",
+    "vue3-contextmenu": "^0.1.9"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^2.33.0",
