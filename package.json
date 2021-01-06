@@ -1,6 +1,6 @@
 {
   "name": "vue3-contextmenu",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "private": false,
   "description": "vue3 contextmenu",
   "keywords": [
@@ -15,8 +15,8 @@
   },
   "license": "MIT",
   "main": "./dist/vue3-contextmenu.common.js",
-  "typings": "dist/types/index.d.ts",
-  "types": "dist/types/index.d.ts",
+  "typings": "dist/vue3-contextmenu.d.ts",
+  "types": "dist/vue3-contextmenu.d.ts",
   "files": [
     "dist"
   ],
