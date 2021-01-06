@@ -31,7 +31,7 @@
     "core-js": "^3.6.5",
     "mitt": "^2.1.0",
     "vue": "^3.0.0",
-    "vue3-contextmenu": "^0.1.9"
+    "vue3-contextmenu": "^0.1.10"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^2.33.0",
