@@ -1,12 +1,22 @@
 {
   "name": "vue3-contextmenu",
-  "version": "0.1.12",
+  "version": "0.2.0",
   "private": false,
-  "description": "vue3 contextmenu",
+  "description": "vue3 contextmenu, vue3 右键菜单",
+  "homepage": "https://hunlongyu.github.io/vue3-contextmenu/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Hunlongyu/vue3-contextmenu.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Hunlongyu/vue3-contextmenu/issues",
+    "email": "hunlongyu@gmail.com"
+  },
   "keywords": [
     "vue3",
     "typescript",
-    "contextmenu"
+    "contextmenu",
+    "右键菜单"
   ],
   "author": {
     "name": "hunlongyu",
@@ -24,8 +34,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "build:lib": "vue-cli-service build --target lib --vue3-contextmenu main ./src/index.ts",
-    "build:dts": "tsc src/index.ts --declaration --declarationDir ./dist/types --emitDeclarationOnly"
+    "build:lib": "vue-cli-service build --target lib --vue3-contextmenu main ./src/index.ts"
   },
   "dependencies": {
     "core-js": "^3.6.5",
