@@ -1,6 +1,7 @@
 <template>
 <div class="">
   <h1>Vue3-contextmenu 右键菜单</h1>
+  <div class="demo" v-contextmenu="{id: '123'}">右键点击区域</div>
   <div class="demo" v-contextmenu>右键点击区域</div>
   <context-menu>
     <context-menu-submenu :label="'查看'">
@@ -38,7 +39,8 @@ export default {
   name: 'App',
   setup () {
     function refresh () {
-      alert('刷新')
+      // alert('刷新')
+      console.log('lalala')
     }
 
     return { refresh }

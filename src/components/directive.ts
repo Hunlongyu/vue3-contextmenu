@@ -1,12 +1,10 @@
 import bus from './bus'
-const onMounted = (el: HTMLElement) => {
-  document.addEventListener('contextmenu', () => {
-    bus.emit('hide-contextmenu')
-    el.addEventListener('contextmenu', e => {
-      e.preventDefault()
-      bus.emit('add-contextmenu', e)
-    }, true)
-  }, true)
+import { DirectiveBinding } from 'vue'
+const onMounted = (el: HTMLElement, binding: DirectiveBinding) => {
+  el.addEventListener('contextmenu', e => {
+    e.preventDefault()
+    bus.emit('add-contextmenu', { x: e.pageX, y: e.pageY, value: binding.value })
+  })
   document.addEventListener('click', () => {
     bus.emit('hide-contextmenu')
   })

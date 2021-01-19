@@ -16,6 +16,7 @@ export default defineComponent({
   setup () {
     const show = ref(false)
     const contextmenu = ref<HTMLDivElement>()
+    const bindingValue = ref<object>()
 
     function getPosition (x: number, y: number) {
       const style = { top: y, left: x }
@@ -39,9 +40,9 @@ export default defineComponent({
       }
     }
 
-    async function showMenu (e: MouseEvent) {
+    async function showMenu (x: number, y: number, val?: object) {
       show.value = true
-      const { pageX: x, pageY: y } = e
+      bindingValue.value = { ...val }
       await nextTick()
       if (contextmenu.value) {
         const el: HTMLDivElement = contextmenu.value
@@ -59,13 +60,14 @@ export default defineComponent({
 
     onMounted(() => {
       bus.on('add-contextmenu', e => {
-        showMenu(e)
+        showMenu(e.x, e.y, e.value)
       })
       bus.on('hide-contextmenu', () => {
         hideMenu()
       })
       bus.on('item-click', () => {
         show.value = false
+        console.log('bindingValue', bindingValue.value)
       })
     })
 
