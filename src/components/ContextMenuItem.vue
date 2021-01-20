@@ -7,7 +7,7 @@
   </div>
 </template>
 <script lang="ts">
-import { reactive, computed, defineComponent } from 'vue'
+import { reactive, computed, defineComponent, onMounted } from 'vue'
 import bus from './bus'
 export default defineComponent({
   name: 'ContextMenuItem',
@@ -18,10 +18,18 @@ export default defineComponent({
       default: false
     }
   },
-  setup (props) {
+  setup (props, { emit }) {
+    const val = reactive({ value: {} })
     function handleClick () {
+      emit('itemClickHandele', val.value)
       bus.emit('item-click')
     }
+
+    onMounted(() => {
+      bus.on('bindValue', e => {
+        val.value = e
+      })
+    })
 
     const itemClass = reactive({
       'v-contextmenu-item--disabled': computed(() => props.disabled)

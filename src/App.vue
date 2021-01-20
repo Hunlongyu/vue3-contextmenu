@@ -1,9 +1,9 @@
 <template>
 <div class="">
   <h1>Vue3-contextmenu 右键菜单</h1>
-  <div class="demo" v-contextmenu="{id: '123'}">右键点击区域</div>
-  <div class="demo" v-contextmenu>右键点击区域</div>
-  <context-menu>
+  <div class="demo" v-contextmenu="{id: '123'}">右键点击区域{id: '123'}</div>
+  <div class="demo" v-contextmenu="{id: [1, 2, 3]}">右键点击区域{ id: [1, 2, 3]}</div>
+  <context-menu ref="context">
     <context-menu-submenu :label="'查看'">
       <context-menu-item :disabled="true">图标</context-menu-item>
       <context-menu-item>列表</context-menu-item>
@@ -17,6 +17,7 @@
       <context-menu-item :disabled="true">时长</context-menu-item>
     </context-menu-submenu>
     <context-menu-item @click="refresh" :divider="true">刷新</context-menu-item>
+    <context-menu-item @itemClickHandele="itemClickEvent" :divider="true">停止</context-menu-item>
     <context-menu-submenu :label="'自定义'" divider>
       <context-menu-item>二级菜单</context-menu-item>
       <context-menu-submenu :label="'多级菜单'">
@@ -39,11 +40,14 @@ export default {
   name: 'App',
   setup () {
     function refresh () {
-      // alert('刷新')
-      console.log('lalala')
+      alert('刷新')
     }
 
-    return { refresh }
+    function itemClickEvent (e: any) {
+      console.log('停止，自定义id:' + e.id)
+    }
+
+    return { refresh, itemClickEvent }
   }
 }
 </script>

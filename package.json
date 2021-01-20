@@ -1,6 +1,6 @@
 {
   "name": "vue3-contextmenu",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "private": false,
   "description": "vue3 contextmenu, vue3 右键菜单",
   "homepage": "https://hunlongyu.github.io/vue3-contextmenu/",
@@ -39,8 +39,7 @@
   "dependencies": {
     "core-js": "^3.6.5",
     "mitt": "^2.1.0",
-    "vue": "^3.0.0",
-    "vue3-contextmenu": "^0.1.12"
+    "vue": "^3.0.0"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^2.33.0",

@@ -43,6 +43,7 @@ export default defineComponent({
     async function showMenu (x: number, y: number, val?: object) {
       show.value = true
       bindingValue.value = { ...val }
+      bus.emit('bindValue', bindingValue.value)
       await nextTick()
       if (contextmenu.value) {
         const el: HTMLDivElement = contextmenu.value
@@ -67,7 +68,6 @@ export default defineComponent({
       })
       bus.on('item-click', () => {
         show.value = false
-        console.log('bindingValue', bindingValue.value)
       })
     })
 

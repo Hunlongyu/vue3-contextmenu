@@ -42,6 +42,7 @@ app.vue
       <context-menu-item disabled>时长</context-menu-item>
     </context-menu-submenu>
     <context-menu-item @click="refresh" :divider="true">刷新</context-menu-item>
+    <context-menu-item @itemClickHandele="itemClickEvent" :divider="true">停止</context-menu-item>
     <context-menu-submenu :label="'自定义'" divider>
       <context-menu-item>二级菜单</context-menu-item>
       <context-menu-submenu :label="'多级菜单'">
@@ -57,7 +58,8 @@ app.vue
     <context-menu-item :disabled="true">属性</context-menu-item>
   </context-menu>
 
-  <div v-contextmenu>右键点击区域</div>
+  <div v-contextmenu="{id: '123'}">右键点击区域{id: '123'}</div>
+  <div v-contextmenu="{id: [1, 2, 3]}">右键点击区域{ id: [1, 2, 3]}</div>
 </template>
 
 <script lang="ts">
@@ -68,7 +70,11 @@ export default {
       alert('刷新')
     }
 
-    return { refresh }
+    function itemClickEvent (e: any) {
+      console.log('停止，自定义id:' + e.id)
+    }
+
+    return { refresh, itemClickEvent }
   }
 }
 </script>
@@ -81,6 +87,7 @@ export default {
 | label    | 子菜单标题文字       | String  | `null`  |
 | disabled | 是否禁用菜单         | Boolean | `false` |
 | divider  | 是否在下方显示分割线 | Boolean | `false` |
+| itemClickHandele | 菜单绑定的点击事件, 参数为自定义数据。如： `{ id: 123 }` | any | `undefinded` |
 
 
 可根据 `class` 自定义样式覆盖
