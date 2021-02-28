@@ -3022,6 +3022,7 @@ module.exports = function (key) {
 __webpack_require__.r(__webpack_exports__);
 
 // EXPORTS
+__webpack_require__.d(__webpack_exports__, "emitContext", function() { return /* reexport */ emitContext; });
 __webpack_require__.d(__webpack_exports__, "directive", function() { return /* reexport */ directive; });
 __webpack_require__.d(__webpack_exports__, "Contextmenu", function() { return /* reexport */ ContextMenu; });
 __webpack_require__.d(__webpack_exports__, "ContextmenuItem", function() { return /* reexport */ ContextMenuItem; });
