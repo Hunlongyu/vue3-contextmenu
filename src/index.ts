@@ -15,6 +15,7 @@ const install = (app: App): void => {
 }
 
 export {
+  emitContext,
   directive,
   Contextmenu,
   ContextmenuItem,
