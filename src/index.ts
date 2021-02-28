@@ -7,7 +7,7 @@ import ContextmenuItem from './components/ContextMenuItem.vue'
 import ContextmenuSubmenu from './components/ContextMenuSubmenu.vue'
 
 const install = (app: App): void => {
-  app.provide('emitContext', emitContext);
+  app.provide('emitContext', emitContext)
   app.directive('contextmenu', directive)
   app.component(Contextmenu.name, Contextmenu)
   app.component(ContextmenuItem.name, ContextmenuItem)
