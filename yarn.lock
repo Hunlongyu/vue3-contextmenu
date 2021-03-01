@@ -8840,16 +8840,6 @@ vue-template-es2015-compiler@^1.9.0:
   resolved "https://registry.npm.taobao.org/vue-template-es2015-compiler/download/vue-template-es2015-compiler-1.9.1.tgz#1ee3bc9a16ecbf5118be334bb15f9c46f82f5825"
   integrity sha1-HuO8mhbsv1EYvjNLsV+cRvgvWCU=
 
-vue3-contextmenu@^0.1.11, vue3-contextmenu@^0.1.12:
-  version "0.1.12"
-  resolved "https://registry.npmjs.org/vue3-contextmenu/-/vue3-contextmenu-0.1.12.tgz#a7d740a79d2cfaad8f4f5e2f40a7528747b00125"
-  integrity sha512-vknZ7+tLw3UakWESHKV9E4u8T6I+/1Yga5uUwhstlMhQeee3QMp4/+/zOCwjL8iRugyZFDesqH/HVRtHKO4vaw==
-  dependencies:
-    core-js "^3.6.5"
-    mitt "^2.1.0"
-    vue "^3.0.0"
-    vue3-contextmenu "^0.1.11"
-
 vue@^3.0.0:
   version "3.0.5"
   resolved "https://registry.npm.taobao.org/vue/download/vue-3.0.5.tgz?cache=0&sync_timestamp=1609359756799&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fvue%2Fdownload%2Fvue-3.0.5.tgz#de1b82eba24abfe71e0970fc9b8d4b2babdc3fe1"

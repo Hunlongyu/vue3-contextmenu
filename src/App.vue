@@ -2,7 +2,7 @@
 <div class="">
   <h1>Vue3-contextmenu 右键菜单</h1>
   <div class="demo" v-contextmenu="{id: '123'}">右键点击区域{id: '123'}</div>
-  <div class="demo" v-contextmenu="{id: [1, 2, 3]}">右键点击区域{ id: [1, 2, 3]}</div>
+  <div @contextmenu="openContextMenu">右键点击区域{ id: [1, 2, 3]}</div>
   <context-menu ref="context">
     <context-menu-submenu :label="'查看'">
       <context-menu-item :disabled="true">图标</context-menu-item>
@@ -36,18 +36,27 @@
 </template>
 
 <script lang="ts">
+
+import { inject } from 'vue'
+
 export default {
   name: 'App',
   setup () {
+    const emitContext = inject('emitContext') as (event: Event, dataId: Record<string, unknown>) => void
+
     function refresh () {
       alert('刷新')
+    }
+
+    function openContextMenu (e: any) {
+      emitContext(e, { id: [1, 2, 3] })
     }
 
     function itemClickEvent (e: any) {
       console.log('停止，自定义id:' + e.id)
     }
 
-    return { refresh, itemClickEvent }
+    return { refresh, itemClickEvent, openContextMenu }
   }
 }
 </script>
