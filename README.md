@@ -42,7 +42,7 @@ app.vue
       <context-menu-item disabled>时长</context-menu-item>
     </context-menu-submenu>
     <context-menu-item @click="refresh" :divider="true">刷新</context-menu-item>
-    <context-menu-item @itemClickHandele="itemClickEvent" :divider="true">停止</context-menu-item>
+    <context-menu-item @itemClickHandle="itemClickEvent" :divider="true">停止</context-menu-item>
     <context-menu-submenu :label="'自定义'" divider>
       <context-menu-item>二级菜单</context-menu-item>
       <context-menu-submenu :label="'多级菜单'">
@@ -96,7 +96,7 @@ export default {
 | label    | 子菜单标题文字       | String  | `null`  |
 | disabled | 是否禁用菜单         | Boolean | `false` |
 | divider  | 是否在下方显示分割线 | Boolean | `false` |
-| itemClickHandele | 菜单绑定的点击事件, 参数为自定义数据。如： `{ id: 123 }` | any | `undefinded` |
+| itemClickHandle | 菜单绑定的点击事件, 参数为自定义数据。如： `{ id: 123 }` | any | `undefinded` |
 
 
 可根据 `class` 自定义样式覆盖
@@ -168,7 +168,7 @@ app.vue
       <context-menu-item disabled> Duration </context-menu-item>
     </context-menu-submenu>
     <context-menu-item @click="refresh" :divider="true"> Refresh </context-menu-item>
-    <context-menu-item @itemClickHandele="itemClickEvent" :divider="true"> Stop </context-menu-item>
+    <context-menu-item @itemClickHandle="itemClickEvent" :divider="true"> Stop </context-menu-item>
     <context-menu-submenu :label="'Custom'" divider>
       <context-menu-item> Secondary menu </context-menu-item>
       <context-menu-submenu :label="'Multi level menu'">
@@ -222,7 +222,7 @@ export default {
 | label    | Submenu title text       | String  | `null`  |
 | disabled | Toggle enable_/disable of menu         | Boolean | `false` |
 | divider  | Show dividing line below item | Boolean | `false` |
-| itemClickHandele | Event on element click, contains custom id as event attribute `id´ | any | `undefinded` |
+| itemClickHandle | Event on element click, contains custom id as event attribute `id´ | any | `undefinded` |
 
 
 Css classes that may be customized

@@ -21,7 +21,7 @@ export default defineComponent({
   setup (props, { emit }) {
     const val = reactive({ value: {} })
     function handleClick () {
-      emit('itemClickHandele', val.value)
+      emit('itemClickHandle', val.value)
       bus.emit('item-click')
     }
 

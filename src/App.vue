@@ -17,7 +17,7 @@
       <context-menu-item :disabled="true">时长</context-menu-item>
     </context-menu-submenu>
     <context-menu-item @click="refresh" :divider="true">刷新</context-menu-item>
-    <context-menu-item @itemClickHandele="itemClickEvent" :divider="true">停止</context-menu-item>
+    <context-menu-item @itemClickHandle="itemClickEvent" :divider="true">停止</context-menu-item>
     <context-menu-submenu :label="'自定义'" divider>
       <context-menu-item>二级菜单</context-menu-item>
       <context-menu-submenu :label="'多级菜单'">
