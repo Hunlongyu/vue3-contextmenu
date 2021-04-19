@@ -3993,8 +3993,8 @@ var directive_onMounted = function onMounted(el, binding) {
   el.addEventListener('contextmenu', function (e) {
     e.preventDefault();
     bus.emit('add-contextmenu', {
-      x: e.pageX,
-      y: e.pageY,
+      x: e.clientX,
+      y: e.clientY,
       value: binding.value
     });
   });
@@ -4016,8 +4016,8 @@ var directive_unmounted = function unmounted() {
 /* harmony default export */ var emitContext = (function ($event, value) {
   $event.preventDefault();
   bus.emit('add-contextmenu', {
-    x: $event.pageX,
-    y: $event.pageY,
+    x: $event.clientX,
+    y: $event.clientY,
     value: value
   });
   document.addEventListener('click', function () {
