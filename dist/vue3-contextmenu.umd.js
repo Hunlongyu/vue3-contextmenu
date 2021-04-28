@@ -3946,6 +3946,7 @@ __webpack_require__.r(__webpack_exports__);
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, "emitContext", function() { return /* reexport */ emitContext; });
+__webpack_require__.d(__webpack_exports__, "hideContext", function() { return /* reexport */ hideContext; });
 __webpack_require__.d(__webpack_exports__, "directive", function() { return /* reexport */ directive; });
 __webpack_require__.d(__webpack_exports__, "Contextmenu", function() { return /* reexport */ ContextMenu; });
 __webpack_require__.d(__webpack_exports__, "ContextmenuItem", function() { return /* reexport */ ContextMenuItem; });
@@ -4023,6 +4024,12 @@ var directive_unmounted = function unmounted() {
   document.addEventListener('click', function () {
     bus.emit('hide-contextmenu');
   });
+});
+// CONCATENATED MODULE: ./src/components/hideContext.ts
+
+/* harmony default export */ var hideContext = (function ($event) {
+  $event.preventDefault();
+  bus.emit('hide-contextmenu');
 });
 // EXTERNAL MODULE: external {"commonjs":"vue","commonjs2":"vue","root":"Vue"}
 var external_commonjs_vue_commonjs2_vue_root_Vue_ = __webpack_require__("8bbf");
@@ -4469,8 +4476,10 @@ ContextMenuSubmenuvue_type_script_lang_ts.__scopeId = "data-v-589b6ec6"
 
 
 
+
 var src_install = function install(app) {
   app.provide('emitContext', emitContext);
+  app.provide('hideContext', hideContext);
   app.directive('contextmenu', directive);
   app.component(ContextMenu.name, ContextMenu);
   app.component(ContextMenuItem.name, ContextMenuItem);
