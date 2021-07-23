@@ -1,6 +1,6 @@
 <template>
   <teleport to="body">
-    <div class="v-contextmenu" v-show="show" ref="contextmenu" v-if="bindingValue && name === bindingValue.name">
+    <div class="v-contextmenu" v-show="show && bindingValue && name === bindingValue.name" ref="contextmenu">
       <slot />
     </div>
   </teleport>
