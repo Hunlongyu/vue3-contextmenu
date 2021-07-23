@@ -1,3 +1,5 @@
+# 注意 `同页面多菜单--->需传参指定ContextMenu Name`
+
 # vue3-contextmenu
 
 由 Vue3 和 Typescript 编写的 Contextmenu 右键菜单组件。
@@ -28,7 +30,7 @@ app.use(contextmenu)
 app.vue
 ```html
 <template>
-  <context-menu>
+  <context-menu name="context-menu-1">
     <context-menu-submenu :label="'查看'">
       <context-menu-item disabled>图标</context-menu-item>
       <context-menu-item>列表</context-menu-item>
@@ -58,7 +60,7 @@ app.vue
     <context-menu-item :disabled="true">属性</context-menu-item>
   </context-menu>
 
-  <div v-contextmenu="{id: '123'}">右键点击区域{id: '123'}</div>
+  <div v-contextmenu="{name: 'context-menu-1', id: '123'}">右键点击区域{id: '123'}</div>
   <div @contextmenu="openContextMenu">右键点击区域{ id: [1, 2, 3]}</div>
 </template>
 
@@ -76,7 +78,7 @@ export default {
     }
 
     function openContextMenu (e: any) {
-      emitContext(e, { id: [1, 2, 3] })
+      emitContext(e, { name: 'context-menu-1', id: [1, 2, 3] })
     }
 
     function itemClickEvent (e: any) {

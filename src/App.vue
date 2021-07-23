@@ -1,10 +1,11 @@
 <template>
 <div class="">
   <h1>Vue3-contextmenu 右键菜单</h1>
-  <div class="demo" v-contextmenu="{id: '123'}">右键点击区域{id: '123'}</div>
+  <div class="demo" v-contextmenu="{name: 'context-menu-1', id: '123'}">右键 - ContextMenu 1</div>
+  <div class="demo" v-contextmenu="{name: 'context-menu-2', id: '123'}">右键 - ContextMenu 2</div>
   <div @contextmenu="openContextMenu">右键点击区域{ id: [1, 2, 3]}</div>
-  <context-menu ref="context">
-    <context-menu-submenu :label="'查看'">
+  <context-menu ref="context" name="context-menu-1">
+    <context-menu-submenu :label="'ContextMenu1'">
       <context-menu-item :disabled="true">图标</context-menu-item>
       <context-menu-item>列表</context-menu-item>
       <context-menu-item>详细信息</context-menu-item>
@@ -32,6 +33,24 @@
     </context-menu-submenu>
     <context-menu-item :disabled="true">属性</context-menu-item>
   </context-menu>
+
+  <context-menu ref="context" name="context-menu-2">
+    <context-menu-submenu :label="'ContextMenu2'">
+      <context-menu-item :disabled="true">图标</context-menu-item>
+      <context-menu-item>列表</context-menu-item>
+      <context-menu-item>详细信息</context-menu-item>
+    </context-menu-submenu>
+    <context-menu-item :disabled="true">属性</context-menu-item>
+  </context-menu>
+
+  <context-menu ref="context" name="context-menu-3">
+    <context-menu-submenu :label="'ContextMenu3'">
+      <context-menu-item :disabled="true">图标</context-menu-item>
+      <context-menu-item>列表</context-menu-item>
+      <context-menu-item>详细信息</context-menu-item>
+    </context-menu-submenu>
+    <context-menu-item :disabled="true">属性</context-menu-item>
+  </context-menu>
 </div>
 </template>
 
@@ -49,7 +68,7 @@ export default {
     }
 
     function openContextMenu (e: any) {
-      emitContext(e, { id: [1, 2, 3] })
+      emitContext(e, { name: 'context-menu-3', id: [1, 2, 3] })
     }
 
     function itemClickEvent (e: any) {
