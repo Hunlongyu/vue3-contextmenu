@@ -1,6 +1,6 @@
 <template>
   <teleport to="body">
-    <div class="v-contextmenu" v-show="show" ref="contextmenu">
+    <div class="v-contextmenu" v-show="show" ref="contextmenu" v-if="bindingValue && name === bindingValue.name">
       <slot />
     </div>
   </teleport>
@@ -11,7 +11,8 @@ import bus from './bus'
 export default defineComponent({
   name: 'ContextMenu',
   props: {
-    cutomClass: String
+    cutomClass: String,
+    name: String
   },
   setup () {
     const show = ref(false)
@@ -71,7 +72,7 @@ export default defineComponent({
       })
     })
 
-    return { show, contextmenu }
+    return { bindingValue, show, contextmenu }
   }
 })
 </script>
