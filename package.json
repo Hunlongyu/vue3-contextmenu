@@ -14,9 +14,13 @@
   },
   "keywords": [
     "vue3",
+    "vue",
     "typescript",
     "contextmenu",
-    "右键菜单"
+    "右键菜单",
+    "菜单",
+    "context",
+    "menu"
   ],
   "author": {
     "name": "hunlongyu",
