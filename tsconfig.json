@@ -1,6 +1,8 @@
 {
   "compilerOptions": {
-    "target": "esnext",
+    "baseUrl": ".",
+    "target": "es5",
+    "importHelpers": true,
     "useDefineForClassFields": true,
     "module": "esnext",
     "moduleResolution": "node",
@@ -9,8 +11,9 @@
     "sourceMap": true,
     "resolveJsonModule": true,
     "esModuleInterop": true,
-    "lib": ["esnext", "dom"]
+    "allowSyntheticDefaultImports": true,
+    "lib": ["esnext", "dom", "dom.iterable", "scripthost"]
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "exclude": ["node_modules"]
 }
