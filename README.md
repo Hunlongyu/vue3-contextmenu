@@ -1,8 +1,14 @@
 # Vue 3 + Typescript + Vite
 
+https://github.dev/Hunlongyu/vue3-contextmenu
 
+https://github.dev/Akryum/floating-vue
+https://github.dev/szboynono/mosha-vue-toastify
 https://github.dev/hellowuxin/vue3-mindmap
-
+https://github.dev/xyxiao001/vue-cropper
+https://github.dev/xch91/vue-scratchcard
+https://github.dev/wan2land/vue-scroll-picker
+https://github.dev/writewithocto/vue-ink
 
 This template should help get you started developing with Vue 3 and Typescript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
 
