@@ -2,6 +2,9 @@
 
 https://github.dev/Hunlongyu/vue3-contextmenu
 
+https://github.dev/imengyu/vue3-context-menu
+https://github.dev/leon-kfd/howdyjs
+
 https://github.dev/Akryum/floating-vue
 https://github.dev/szboynono/mosha-vue-toastify
 https://github.dev/hellowuxin/vue3-mindmap
