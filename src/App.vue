@@ -4,7 +4,8 @@
 
 <script lang="ts" setup>
 import Contextmenu from './components/Contextmenu.vue'
-const options = {
+import type { OptionsType } from './types'
+const options: OptionsType = {
   x: 0,
   y: 0,
   id: 0,
