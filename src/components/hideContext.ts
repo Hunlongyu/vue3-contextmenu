@@ -1,6 +1,5 @@
 import bus from './bus'
 
-export default function ($event: MouseEvent) {
-  $event.preventDefault()
+export default function () {
   bus.emit('hide-contextmenu')
 }
